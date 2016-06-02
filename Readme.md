@@ -5,8 +5,6 @@ This is an open source project to build a continuous integration pipeline for bu
 
 **Notes**
 This section describes some design principles and decisions.
- - Less is more
-    _"This is actually easy as it has just started ;)"_
  - **Docker** it is used to package the application artifacts and its dependencies.
  - This project assumes you are defining your **infrastructure as code** using docker-compose. 
  - By now we assume you use **jhipster** to generate microservices application.
