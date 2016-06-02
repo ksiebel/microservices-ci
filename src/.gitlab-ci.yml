@@ -1,0 +1,51 @@
+image: ogomez/gitllab-ci-jhipster
+
+stages:
+  - build
+  - deploy
+
+gateway-build:
+  stage: build
+  script:
+    - cd /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_GATEWAY_APP
+    - ./mvnw -Pprod package"
+  artifacts:
+    paths:
+    - /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_GATEWAY_APP/target/*.war
+
+microservice-build:
+  stage: build
+  script:
+    - cd /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_MICROSERVICE_APP
+    - ./mvnw -Pprod package"
+  artifacts:
+    paths:
+    - /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_MICROSERVICE_APP/target/*.war
+
+gateway-deploy:
+  image: ogomez/java-docker
+  services:
+    - docker:dind
+  stage: deploy
+  dependencies:
+    - gateway-build
+  script:
+    - cd /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_GATEWAY_APP
+    - ./mvnw docker:build
+    - docker tag frontend registry.gitlab.com/$GITLAB_USER/$GITLAB_PROJECT:$JHIPSTER_GATEWAY_APP
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker push registry.gitlab.com/$GITLAB_USER/$GITLAB_PROJECT:$JHIPSTER_GATEWAY_APP
+
+microservice-deploy:
+  image: ogomez/java-docker
+  services:
+    - docker:dind
+  stage: deploy
+  dependencies:
+    - microservice-build
+  script:
+    - cd /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_MICROSERVICE_APP
+    - ./mvnw docker:build
+    - docker tag backend registry.gitlab.com/$GITLAB_USER/$GITLAB_PROJECT:$JHIPSTER_MICROSERVICE_APP
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker push registry.gitlab.com/$GITLAB_USER/$GITLAB_PROJECT:$JHIPSTER_MICROSERVICE_APP
