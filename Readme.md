@@ -11,7 +11,7 @@ This section describes some design principles and decisions.
  - The jhipster application has to be packaged as docker containers and it uses docker-compose for deploying the application.
     _"jhipster it is already working with docker and docker-compose"_
  - It uses Gitlab as code repository, CI and docker registry.
-    _"It provides both an on premises community version and a cloud service for free with unlimited repositories"_ 
+    _"Gitlab provides both on premises community version and a cloud service for free with unlimited repositories"_ 
 
 **Notes for the future**
  - Other microservices application technology stacks will be added to this project in the future.
