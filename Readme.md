@@ -9,7 +9,7 @@ This section describes some design principles and decisions.
     _"This is actually easy as it has just started ;)"_
  - By now we assume you use jhipster to generate microservices application.
  - The jhipster application has to be packaged as docker containers and it uses docker-compose for deploying the application.
-    _"jhipster it is already working with docker and docker-compose" 
+    _"jhipster it is already working with docker and docker-compose"_
  - It uses Gitlab as code repository, CI and docker registry.
     _"It provides both an on premises community version and a cloud service for free with unlimited repositories"_ 
 
