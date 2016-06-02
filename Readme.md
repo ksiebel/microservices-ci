@@ -14,7 +14,7 @@ This section describes some design principles and decisions.
 
 **Notes for the future**
  - Other microservices application technology stacks will be added to this project in the future.
-    _"The technology stacks has to use a yeoman scaffolding, so you can have a working microservices application with a CI pipeline in minutes."_    
+    _"The technology stack has to be generated using yeoman scaffolding, so you can have a working microservices application with a CI pipeline in minutes."_    
  
 **Quick Start**
 TBD
