@@ -12,7 +12,6 @@ This section describes some design principles and decisions.
  - By now we assume you use **jhipster** to generate microservices application.
     _"The jhipster microservice application has to be packaged as docker containers and use docker-compose for CI environment deployment."_
  - It uses **Gitlab** as code repository, CI and docker registry.
-    _"Gitlab provides both on premises community version and a cloud service for free with unlimited repositories"_ 
 
 **Notes for the future**
  - Mode code repositories will be added in future releases.
