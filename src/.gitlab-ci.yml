@@ -1,5 +1,11 @@
 image: ogomez/gitllab-ci-jhipster
 
+variables:
+  - JHIPSTER_GATEWAY_APP: "gateway_application_name"
+  - JHIPSTER_MICROSERVICE_APP: "microservice_application_name"
+  - GITLAB_GROUP: "group"
+  - GITLAB_PROJECT: "project"
+
 stages:
   - build
   - deploy
@@ -7,20 +13,20 @@ stages:
 gateway-build:
   stage: build
   script:
-    - cd /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_GATEWAY_APP
+    - cd /$CI_PROJECT_DIR/$JHIPSTER_GATEWAY_APP
     - ./mvnw -Pprod package"
   artifacts:
     paths:
-    - /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_GATEWAY_APP/target/*.war
+    - /$CI_PROJECT_DIR/$JHIPSTER_GATEWAY_APP/target/*.war
 
 microservice-build:
   stage: build
   script:
-    - cd /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_MICROSERVICE_APP
+    - cd /$CI_PROJECT_DIR/$JHIPSTER_MICROSERVICE_APP
     - ./mvnw -Pprod package"
   artifacts:
     paths:
-    - /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_MICROSERVICE_APP/target/*.war
+    - /$CI_PROJECT_DIR/$JHIPSTER_MICROSERVICE_APP/target/*.war
 
 gateway-deploy:
   image: ogomez/java-docker
@@ -30,11 +36,11 @@ gateway-deploy:
   dependencies:
     - gateway-build
   script:
-    - cd /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_GATEWAY_APP
+    - cd /$CI_PROJECT_DIR/$JHIPSTER_GATEWAY_APP
     - ./mvnw docker:build
-    - docker tag frontend registry.gitlab.com/$GITLAB_USER/$GITLAB_PROJECT:$JHIPSTER_GATEWAY_APP
+    - docker tag frontend registry.gitlab.com/$GITLAB_GROUP/$GITLAB_PROJECT:$JHIPSTER_GATEWAY_APP
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-    - docker push registry.gitlab.com/$GITLAB_USER/$GITLAB_PROJECT:$JHIPSTER_GATEWAY_APP
+    - docker push registry.gitlab.com/$GITLAB_GROUP/$GITLAB_PROJECT:$JHIPSTER_GATEWAY_APP
 
 microservice-deploy:
   image: ogomez/java-docker
@@ -44,8 +50,8 @@ microservice-deploy:
   dependencies:
     - microservice-build
   script:
-    - cd /builds/$GITLAB_USER/$GITLAB_PROJECT/$JHIPSTER_MICROSERVICE_APP
+    - cd /$CI_PROJECT_DIR/$JHIPSTER_MICROSERVICE_APP
     - ./mvnw docker:build
-    - docker tag backend registry.gitlab.com/$GITLAB_USER/$GITLAB_PROJECT:$JHIPSTER_MICROSERVICE_APP
+    - docker tag backend registry.gitlab.com/$GITLAB_GROUP/$GITLAB_PROJECT:$JHIPSTER_MICROSERVICE_APP
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-    - docker push registry.gitlab.com/$GITLAB_USER/$GITLAB_PROJECT:$JHIPSTER_MICROSERVICE_APP
+    - docker push registry.gitlab.com/$GITLAB_GROUP/$GITLAB_PROJECT:$JHIPSTER_MICROSERVICE_APP
