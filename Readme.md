@@ -1,8 +1,8 @@
 **What is this repository?**
 This is an open source project to build a continuous integration pipeline for building, testing and deploying a **jhipster** microservices application in a continuous integration environment.
 
-**Design principles**
-This section describes the design principles to be able to be focus in the objective of the project.
+**Notes**
+This section describes some design principles and decisions.
  - Less is more
     _"This is actually easy as it has just started ;)"_
  - The jhipster application has to be packaged as docker containers.
