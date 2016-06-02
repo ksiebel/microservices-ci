@@ -1,7 +1,7 @@
 # Microservice application with continuous integration
 
 **What is this repository?**
-This is an open source project to build a continuous integration pipeline for building, testing and deploying a **jhipster** microservices application in a continuous integration environment.
+This is an open source project to build a continuous integration pipeline for building, testing and deploying a microservices application in a continuous integration environment.
 
 **Notes**
 This section describes some design principles and decisions.
