@@ -15,7 +15,8 @@ This section describes some design principles and decisions.
 
 **Notes for the future**
  - Mode code repositories will be added in future releases.
- - Other microservices application technology stacks will be added to this project in the future.
+ - It has to be microservice application technology stack agnostic. 
+    _"As far the technology stack supports using docker to package the application"_ 
     _"The technology stack has to be generated using yeoman scaffolding, so you can have a working microservices application with a CI pipeline in minutes."_
 
 **Quick Start**
