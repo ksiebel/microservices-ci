@@ -1,7 +1,7 @@
 # Microservice application with continuous integration
 
 **What is this repository?**
-This is an open source project to build a continuous integration pipeline for building, testing and deploying a microservices application in a continuous integration environment.
+This is an open source project to create a continuous integration pipeline for building, testing and deploying a microservices application in a continuous integration environment.
 
 **Objective**
  - The goal is to have a microservices application with a CI pipeline in a few minutes.
@@ -19,7 +19,7 @@ This section describes some design principles and decisions.
  - It has to be microservice application technology stack agnostic. 
     _"As far the technology stack supports using docker to package the application and it is generated using yeoman scaffolding"_
 
-**Quick Start**
+# Quick Start
 
 1.Create a directory for your project and enter into it
 
@@ -74,9 +74,25 @@ Go to Container Registry menu and see your containers.
 
 Enjoy!
 
+# Beyond quick start
 
+**Infrestructure as code**
 
-**Beyond quick start**
+> Create a folder within the project with the docker-compose name or something similar and enter into it.
+> Then execute 
+> $ yo jhipster:docker-compose
 
-Create Specific runners (it allows you to create your own runners)
+This will create all the needed files to bring the application up and running.
+_"Find more details about docker-compose with jhipster in http://jhipster.github.io/docker-compose/ "_
+
+Now update the images sources of the docker-compose.yml file to point to your gitlab docker repository.
+
+> services:
+>   application_name:
+>       image: registry.gitlab.com/GITLAB_USER/PROJECT_NAME:APPLICATION_NAME
+
+_"Note you have to do it for both gateway and microservices application"_
+
+**Create Specific runners** 
+(This allows you to create your own runners)
 http://docs.gitlab.com/ce/ci/runners/README.html
