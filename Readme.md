@@ -20,4 +20,31 @@ This section describes some design principles and decisions.
     _"As far the technology stack supports using docker to package the application and it is generated using yeoman scaffolding"_
 
 **Quick Start**
-TBD
+
+1.Create a directory for your project and enter into it
+
+$ mkdir project_name
+$ cd project_name
+
+2.Create your microservice application with jhipster.
+
+http://jhipster.github.io/creating-an-app/
+
+http://jhipster.github.io/microservices-architecture/
+
+_At this stage you should have two applications in your project each one with its own folder._
+_"/project_name/gateway_app_name & /project_name/microservice_app_name"_
+
+3.Download the .gitlab-ci.yml in your /project_name folder.
+
+$ wget https://raw.githubusercontent.com/ogomezm/microservices-ci/master/src/.gitlab-ci.yml
+
+4.Edit the .gitlab-ci.yml to configure your build
+
+>variables:
+>  JHIPSTER_GATEWAY_APP: _"gateway_application_name"_
+>  JHIPSTER_MICROSERVICE_APP: _"microservice_application_name"_
+>  GITLAB_GROUP: _"group"_
+>  GITLAB_PROJECT: _"project"_
+  
+_GITLAB_GROUP & GITLAB_PROJECT are your gitlab username and project_name_
