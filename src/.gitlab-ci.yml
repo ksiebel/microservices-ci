@@ -14,7 +14,7 @@ gateway-build:
   stage: build
   script:
     - cd /$CI_PROJECT_DIR/$JHIPSTER_GATEWAY_APP
-    - ./mvnw -Pprod package"
+    - ./mvnw -Pprod package
   artifacts:
     paths:
     - /$CI_PROJECT_DIR/$JHIPSTER_GATEWAY_APP/target/*.war
@@ -23,7 +23,7 @@ microservice-build:
   stage: build
   script:
     - cd /$CI_PROJECT_DIR/$JHIPSTER_MICROSERVICE_APP
-    - ./mvnw -Pprod package"
+    - ./mvnw -Pprod package
   artifacts:
     paths:
     - /$CI_PROJECT_DIR/$JHIPSTER_MICROSERVICE_APP/target/*.war
