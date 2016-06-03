@@ -1,10 +1,10 @@
 image: ogomez/jhipster-gitlab-ci
 
 variables:
-  - JHIPSTER_GATEWAY_APP: "gateway_application_name"
-  - JHIPSTER_MICROSERVICE_APP: "microservice_application_name"
-  - GITLAB_GROUP: "group"
-  - GITLAB_PROJECT: "project"
+  JHIPSTER_GATEWAY_APP: "gateway_application_name"
+  JHIPSTER_MICROSERVICE_APP: "microservice_application_name"
+  GITLAB_GROUP: "group"
+  GITLAB_PROJECT: "project"
 
 stages:
   - build
