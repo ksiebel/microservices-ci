@@ -1,4 +1,4 @@
-image: ogomez/gitllab-ci-jhipster
+image: ogomez/jhipster-gitlab-ci
 
 variables:
   - JHIPSTER_GATEWAY_APP: "gateway_application_name"
