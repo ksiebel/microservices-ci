@@ -28,8 +28,10 @@ This section describes some design principles and decisions.
 
 2.Create your microservice application with jhipster.
 
+How to create a jhipster application:
 http://jhipster.github.io/creating-an-app/
 
+jhipster Microservices Architecure details:
 http://jhipster.github.io/microservices-architecture/
 
 _At this stage you should have two applications in your project, each one with its own folder "/project_name/gateway_app_name & /project_name/microservice_app_name"_
@@ -38,7 +40,18 @@ _At this stage you should have two applications in your project, each one with i
 
 > $ wget https://raw.githubusercontent.com/ogomezm/microservices-ci/master/src/.gitlab-ci.yml
 
-4.Edit the .gitlab-ci.yml to configure your build
+4.Create your Gitlab project and activate the ci and the docker repository.
+
+Now you create a project in [gitlab.com](https://gitlab.com/) and go to project settings to activate the shared runners and container registry.
+
+Configure your CI:
+http://docs.gitlab.com/ce/ci/quick_start/README.html
+_"For a quick start you can use shared runners, but please read the security considerations of using shared runners in the link above"_
+
+Activate container registry:
+http://about.gitlab.com/2016/05/23/gitlab-container-registry/
+
+5.Edit the .gitlab-ci.yml to configure your build
 
 >variables:
 >  JHIPSTER_GATEWAY_APP: _"gateway_application_name"_
@@ -47,3 +60,23 @@ _At this stage you should have two applications in your project, each one with i
 >  GITLAB_PROJECT: _"project"_
   
 _GITLAB_GROUP & GITLAB_PROJECT are your gitlab username and project_name_
+
+6.Push your code to the repository 
+
+Go for one of your favorite drinks, it takes around 10 minutes to run your ci pipeline with an small jhipster project.
+
+After 10 minutes...
+
+Login into [gitlab.com](https://gitlab.com/)
+Select your project
+Go to Pipelines menu and see your build details.
+Go to Container Registry menu and see your containers.
+
+Enjoy!
+
+
+
+**Beyond quick start**
+
+Create Specific runners (it allows you to create your own runners)
+http://docs.gitlab.com/ce/ci/runners/README.html
