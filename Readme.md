@@ -3,6 +3,9 @@
 **What is this repository?**
 This is an open source project to build a continuous integration pipeline for building, testing and deploying a microservices application in a continuous integration environment.
 
+**Objective**
+ - The goal is to have a microservices application with a CI pipeline in a few minutes.
+ 
 **Notes**
 This section describes some design principles and decisions.
  - **Docker** it is used to package the application artifacts and its dependencies.
@@ -14,7 +17,7 @@ This section describes some design principles and decisions.
 **Notes for the future**
  - Mode code repositories will be added in future releases.
  - It has to be microservice application technology stack agnostic. 
-    _"As far the technology stack supports using docker to package the application and it is generated using yeoman scaffolding, so you can have a working microservices application with a CI pipeline in minutes."_
+    _"As far the technology stack supports using docker to package the application and it is generated using yeoman scaffolding"_
 
 **Quick Start**
 TBD
