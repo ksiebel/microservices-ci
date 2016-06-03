@@ -23,8 +23,8 @@ This section describes some design principles and decisions.
 
 1.Create a directory for your project and enter into it
 
-$ mkdir project_name
-$ cd project_name
+> $ mkdir project_name
+> $ cd project_name
 
 2.Create your microservice application with jhipster.
 
@@ -32,12 +32,11 @@ http://jhipster.github.io/creating-an-app/
 
 http://jhipster.github.io/microservices-architecture/
 
-_At this stage you should have two applications in your project each one with its own folder._
-_"/project_name/gateway_app_name & /project_name/microservice_app_name"_
+_At this stage you should have two applications in your project, each one with its own folder "/project_name/gateway_app_name & /project_name/microservice_app_name"_
 
 3.Download the .gitlab-ci.yml in your /project_name folder.
 
-$ wget https://raw.githubusercontent.com/ogomezm/microservices-ci/master/src/.gitlab-ci.yml
+> $ wget https://raw.githubusercontent.com/ogomezm/microservices-ci/master/src/.gitlab-ci.yml
 
 4.Edit the .gitlab-ci.yml to configure your build
 
