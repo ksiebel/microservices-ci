@@ -59,7 +59,7 @@ http://about.gitlab.com/2016/05/23/gitlab-container-registry/
 >  GITLAB_GROUP: _"group"_
 >  GITLAB_PROJECT: _"project"_
   
-_GITLAB_GROUP & GITLAB_PROJECT are your gitlab username and project_name_
+_GITLAB_GROUP & GITLAB_PROJECT are your gitlab username and project name_
 
 6.Push your code to the repository 
 
