@@ -17,7 +17,7 @@ This section describes some design principles and decisions.
 **Notes for the future**
  - Mode code repositories will be added in future releases.
  - It has to be microservice application technology stack agnostic. 
-    _"As far the technology stack supports using docker to package the application and it is generated using yeoman scaffolding"_
+    _"As far as the technology stack supports using docker to package the application and it is generated using yeoman scaffolding"_
 
 # Quick Start
 
