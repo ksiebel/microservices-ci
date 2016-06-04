@@ -15,7 +15,7 @@ This section describes some design principles and decisions.
  - It uses **Gitlab** as code repository, CI and docker registry.
 
 **Notes for the future**
- - Mode code repositories will be added in future releases.
+ - More code repositories will be added in future releases.
  - It has to be microservice application technology stack agnostic. 
     _"As far as the technology stack supports using docker to package the application and it is generated using yeoman scaffolding"_
 
@@ -67,10 +67,13 @@ Go for one of your favorite drinks, it takes around 10 minutes to run your ci pi
 
 After 10 minutes...
 
-Login into [gitlab.com](https://gitlab.com/)
-Select your project
-Go to Pipelines menu and see your build details.
-Go to Container Registry menu and see your containers.
+Login into [gitlab.com](https://gitlab.com/).
+
+Select your project.
+
+Go to Pipelines menu and see your build details, and your artifacts (application war files)
+
+Go to Container Registry menu and see your containers.  (docker containers)
 
 Enjoy!
 
