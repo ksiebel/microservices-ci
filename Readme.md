@@ -39,7 +39,7 @@ _At this stage you should have two applications in your project, each one with i
 
 Remembre to modify gateway_app pom.xml (this allows bower to run in root within the runner-image.
 
-'''
+'''xml
  <execution>
  <id>bower install</id>
  <goals>
