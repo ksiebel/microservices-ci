@@ -24,6 +24,7 @@ This section describes some design principles and decisions.
 1.Create a directory for your project and enter into it
 
 > $ mkdir project_name
+
 > $ cd project_name
 
 2.Create your microservice application with jhipster.
@@ -46,8 +47,11 @@ Now you create a project in [gitlab.com](https://gitlab.com/) and go to project 
 
 Configure your CI:
 http://docs.gitlab.com/ce/ci/quick_start/README.html
+
 _"For a quick start you can use shared runners, but please read the security considerations of using shared runners in the link above"_
+
 **Docker dind it is not supported in shared runners so the deploy step will fail**
+
 _Find details of how to create and register shared runners with docker in docker i the URL below_
 
 **Create Specific runners** 
@@ -60,9 +64,13 @@ http://about.gitlab.com/2016/05/23/gitlab-container-registry/
 5.Edit the .gitlab-ci.yml to configure your build
 
 >variables:
+
 >  JHIPSTER_GATEWAY_APP: _"gateway_application_name"_
+
 >  JHIPSTER_MICROSERVICE_APP: _"microservice_application_name"_
+
 >  GITLAB_GROUP: _"group"_
+
 >  GITLAB_PROJECT: _"project"_
   
 _GITLAB_GROUP & GITLAB_PROJECT are your gitlab username and project name_
@@ -90,6 +98,7 @@ Enjoy!
 Create a folder within the project with the docker-compose name or something similar and enter into it.
 
 > $ mkdir docker_compose
+
 > $ cd docker_compose
 
 Then execute 
@@ -102,8 +111,9 @@ _"Find more details about docker-compose with jhipster in http://jhipster.github
 Now update the images sources of the docker-compose.yml file to point to your gitlab docker repository.
 
 > services:
+
 >   application_name:
+
 >       image: registry.gitlab.com/GITLAB_USER/PROJECT_NAME:APPLICATION_NAME
 
 _"Note you have to do it for both gateway and microservices application"_
-
