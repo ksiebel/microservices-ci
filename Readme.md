@@ -37,7 +37,7 @@ http://jhipster.github.io/microservices-architecture/
 
 _At this stage you should have two applications in your project, each one with its own folder "/project_name/gateway_app_name & /project_name/microservice_app_name"_
 
-Remembre to modify gateway_app pom.xml (this allows bower to run in root within the runner-image.
+Remembrer to modify gateway_app pom.xml (adding '--allow-root' to bower install)
 
 ```xml
  <execution>
@@ -46,7 +46,7 @@ Remembre to modify gateway_app pom.xml (this allows bower to run in root within 
  <goal>bower</goal>
  </goals>
  <configuration>
- <arguments>install --no-color **--allow-root**</arguments>
+ <arguments>install --no-color --allow-root</arguments>
  </configuration>
  </execution>
 ```
