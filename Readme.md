@@ -39,15 +39,17 @@ _At this stage you should have two applications in your project, each one with i
 
 Remembre to modify gateway_app pom.xml (this allows bower to run in root within the runner-image.
 
-> <execution>
-> <id>bower install</id>
-> <goals>
-> <goal>bower</goal>
-> </goals>
-> <configuration>
-> <arguments>install --no-color **--allow-root**</arguments>
-> </configuration>
-> </execution>
+'''
+ <execution>
+ <id>bower install</id>
+ <goals>
+ <goal>bower</goal>
+ </goals>
+ <configuration>
+ <arguments>install --no-color **--allow-root**</arguments>
+ </configuration>
+ </execution>
+'''
 
 ###3.Download the .gitlab-ci.yml in your /project_name folder.
 
