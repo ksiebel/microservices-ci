@@ -47,6 +47,12 @@ Now you create a project in [gitlab.com](https://gitlab.com/) and go to project 
 Configure your CI:
 http://docs.gitlab.com/ce/ci/quick_start/README.html
 _"For a quick start you can use shared runners, but please read the security considerations of using shared runners in the link above"_
+**Docker dind it is not supported in shared runners so the deploy step will fail**
+_Find details of how to create and register shared runners with docker in docker i the URL below_
+
+**Create Specific runners** 
+(This allows you to create your own runners with docker in docker support)
+http://docs.gitlab.com/ce/ci/runners/README.html
 
 Activate container registry:
 http://about.gitlab.com/2016/05/23/gitlab-container-registry/
@@ -81,8 +87,13 @@ Enjoy!
 
 **Infrestructure as code**
 
-> Create a folder within the project with the docker-compose name or something similar and enter into it.
-> Then execute 
+Create a folder within the project with the docker-compose name or something similar and enter into it.
+
+> $ mkdir docker_compose
+> $ cd docker_compose
+
+Then execute 
+
 > $ yo jhipster:docker-compose
 
 This will create all the needed files to bring the application up and running.
@@ -96,6 +107,3 @@ Now update the images sources of the docker-compose.yml file to point to your gi
 
 _"Note you have to do it for both gateway and microservices application"_
 
-**Create Specific runners** 
-(This allows you to create your own runners)
-http://docs.gitlab.com/ce/ci/runners/README.html
