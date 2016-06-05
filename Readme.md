@@ -21,13 +21,13 @@ This section describes some design principles and decisions.
 
 # Quick Start
 
-1.Create a directory for your project and enter into it
+###1.Create a directory for your project and enter into it
 
 > $ mkdir project_name
 
 > $ cd project_name
 
-2.Create your microservice application with jhipster.
+###2.Create your microservice application with jhipster.
 
 How to create a jhipster application:
 http://jhipster.github.io/creating-an-app/
@@ -37,11 +37,11 @@ http://jhipster.github.io/microservices-architecture/
 
 _At this stage you should have two applications in your project, each one with its own folder "/project_name/gateway_app_name & /project_name/microservice_app_name"_
 
-3.Download the .gitlab-ci.yml in your /project_name folder.
+###3.Download the .gitlab-ci.yml in your /project_name folder.
 
 > $ wget https://raw.githubusercontent.com/ogomezm/microservices-ci/master/src/.gitlab-ci.yml
 
-4.Create your Gitlab project and activate the ci and the docker repository.
+###4.Create your Gitlab project and activate the ci and the docker repository.
 
 Now you create a project in [gitlab.com](https://gitlab.com/) and go to project settings to activate the shared runners and container registry.
 
@@ -61,7 +61,7 @@ http://docs.gitlab.com/ce/ci/runners/README.html
 Activate container registry:
 http://about.gitlab.com/2016/05/23/gitlab-container-registry/
 
-5.Edit the .gitlab-ci.yml to configure your build
+###5.Edit the .gitlab-ci.yml to configure your build
 
 >variables:
 
@@ -75,7 +75,7 @@ http://about.gitlab.com/2016/05/23/gitlab-container-registry/
   
 _GITLAB_GROUP & GITLAB_PROJECT are your gitlab username and project name_
 
-6.Push your code to the repository 
+###6.Push your code to the repository 
 
 Go for one of your favorite drinks, it takes around 10 minutes to run your ci pipeline with an small jhipster project.
 
