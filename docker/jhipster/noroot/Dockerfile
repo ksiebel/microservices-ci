@@ -22,8 +22,7 @@ RUN \
      fontconfig \
      python \
      g++ \
-     build-essential \
-     sudo && \
+     build-essential && \
 
   # install node.js
   curl -sL https://deb.nodesource.com/setup_4.x | bash && \
@@ -61,13 +60,5 @@ RUN \
 USER jhipster
 WORKDIR "/home/jhipster/app"
 VOLUME ["/home/jhipster/app"]
-
-RUN mkdir jhipster-speedup \
- && cd jhipster-speedup \
- && wget https://github.com/jhipster/jhipster-travis-build/archive/master.zip \
- && unzip -qq master.zip \
- && rm master.zip \
- && ls && cd jhipster-travis-build-master && ls && pwd
-
 EXPOSE 8080 3000 3001
 CMD ["tail", "-f", "/home/jhipster/generator-jhipster/generators/server/templates/src/main/resources/banner-no-color.txt"]
