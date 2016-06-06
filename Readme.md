@@ -37,6 +37,20 @@ http://jhipster.github.io/microservices-architecture/
 
 _At this stage you should have two applications in your project, each one with its own folder "/project_name/gateway_app_name & /project_name/microservice_app_name"_
 
+Remembrer to modify gateway_app pom.xml (adding '--allow-root' to bower install)
+
+```xml
+ <execution>
+ <id>bower install</id>
+ <goals>
+ <goal>bower</goal>
+ </goals>
+ <configuration>
+ <arguments>install --no-color --allow-root</arguments>
+ </configuration>
+ </execution>
+```
+
 ###3.Download the .gitlab-ci.yml in your /project_name folder.
 
 > $ wget https://raw.githubusercontent.com/ogomezm/microservices-ci/master/src/.gitlab-ci.yml
