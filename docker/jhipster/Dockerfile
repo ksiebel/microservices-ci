@@ -8,3 +8,4 @@ RUN mkdir jhipster-speedup \
  && wget https://github.com/jhipster/jhipster-travis-build/archive/master.zip \
  && unzip -qq master.zip \
  && rm master.zip
+
